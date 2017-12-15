@@ -1,0 +1,29 @@
+<div class='home'>
+    <h2>Home</h2>
+    <div class = "row add-serch">
+        <a class="btn btn-success col-md-3" ui-sref='addContact'>Add new contact</a>
+        <div class = "col-md-offset-6 col-md-3">
+            <input type='text' class="form-control" placeholder="Search" ng-model='filterValue'/>
+        </div>
+    </div>
+    <div class = "table">
+        <table class = "table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contact in objToArray(contactsList) | searchFilter: filterValue | orderBy: 'name' track by $index"">
+                    <td>{{contact.name}}</td>
+                    <td>{{contact.phone}}</td>
+                    <td>{{contact.email}}</td>
+                    <td><a ng-href='/edit/{{contact.name}}' class="btn btn-success">Edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

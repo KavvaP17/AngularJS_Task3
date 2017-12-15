@@ -1,0 +1,26 @@
+<div class='addContact'>
+    <h2>Add contact</h2>
+    <form name="addContactForm" novalidate>
+        <div class="form-group inputAddContact" ng-class="{ 'has-error' : ((addContactForm.addName.$invalid && !addContactForm.addName.$pristine) || !nameIsValid(addItem.name))}">
+            <label for="addName">Name:</label>
+            <input type='text' name="addName" id="addName" class="form-control" ng-model='addItem.name' required/>
+            <p ng-show="addContactForm.addName.$invalid && !addContactForm.addName.$pristine" class="help-block">Name is invalid.</p>
+            <p ng-show="!addContactForm.addName.$invalid && !addContactForm.addName.$pristine && !nameIsValid(addItem.name)" class="help-block">This name is already use.</p>
+        </div>
+        <div class="form-group inputAddContact" ng-class="{ 'has-error' : (addContactForm.addPhone.$invalid && !addContactForm.addPhone.$pristine)}">
+            <label for="addPhone">Phone:</label>
+            <input type='text' name="addPhone" id="addPhone" class="form-control" ng-model='addItem.phone' required/>
+            <p ng-show="addContactForm.addPhone.$invalid && !addContactForm.addPhone.$pristine" class="help-block">Phone is required.</p>
+        </div>
+        <div class="form-group inputAddContact" ng-class="{ 'has-error' : (addContactForm.addEmail.$invalid && !addContactForm.addEmail.$pristine)}">
+            <label for="addEmail">Email:</label>
+            <input type='email' name="addEmail" id="addEmail" class="form-control" ng-model='addItem.email' required/>
+            <p ng-show="addContactForm.addEmail.$invalid && !addContactForm.addEmail.$pristine" class="help-block">Email is invalid.</p>
+        </div>
+        <div class="row editFormBtnGroup">
+            <button type="button" ng-click= "addContact(addItem.name, addItem.phone, addItem.email)"
+                class="btn btn-success col-md-2" ng-disabled = "addFormValid(addItem.name, addItem.phone, addItem.email)">Add</button>
+            <button type="button" ng-click= "goHome()" class="btn btn-default col-md-offset-8 col-md-2">Cancel</button>
+        </div>
+    </form>
+</div>

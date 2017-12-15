@@ -1,0 +1,28 @@
+.blue{
+    color: blue;
+}
+.red{
+    color: red;
+}
+.searchInput{
+    margin-bottom: 10px;
+}
+.addNewContact{
+    margin-bottom: 40px;
+}
+.inputAddContact, .inputEditContact{
+    margin: 30px 10px;
+    position: relative;
+}
+.help-block{
+    position: absolute;
+    top: 20;
+    left: 0;
+    color: red;
+}
+.add-serch{
+    margin: 30px 0;
+}
+.editFormBtnGroup{
+    margin: 40px 10px;
+}
